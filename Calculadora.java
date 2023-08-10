@@ -17,16 +17,19 @@ public class Calculadora {
         double radianes;
         double resultado3;
 
-        System.out.println("Elija una opcion \n1.Suma \n2.resta \n3.multiplicacion \n4.Division \n5.salir \n6.Seno en grados");
-        opcion = s.nextInt();
-        while (opcion < 0 || opcion > 6) {
-            System.out.println("Opcion invalida elija una de las siguientes: ");
-            System.out.println("Elija una opcion \n1.Suma \n2.resta \n3.multiplicacion \n4.Division \n5.salir \n6.Seno en grados ");
-            opcion = s.nextInt();
-        }
+
 
 
         do {
+
+
+            System.out.println("Elija una opcion \n1.Suma \n2.resta \n3.multiplicacion \n4.Division \n5.salir \n6.Seno en grados");
+            opcion = s.nextInt();
+            while (opcion < 0 || opcion > 7) {
+                System.out.println("Opcion invalida elija una de las siguientes: ");
+                System.out.println("Elija una opcion \n1.Suma \n2.resta \n3.multiplicacion \n4.Division \n5.salir \n6.Seno en grados  \n7.Coseno En Grados");
+                opcion = s.nextInt();
+            }
 
             switch (opcion) {
                 case 1: {
@@ -91,7 +94,9 @@ public class Calculadora {
                     System.out.println("Ingrese el angulo en grados ");
                     grados=s.nextDouble();
                     radianes=Math.toRadians(grados);
-                    radianes=coseno
+                    resultado3=coseno.operacion(radianes);
+                    System.out.println("El coseno de " + grados + " es: " + resultado3);
+                    break;
 
 
 
@@ -168,9 +173,18 @@ public class Calculadora {
 
 
     static class coseno {
-
-        private
+private static double resultado5;
+        private static double operacion(double valor1){
+            resultado5=Math.cos(valor1);
+            return resultado5;
+        }
     }
+
+   /* private  static double tan{
+
+;
+
+    }*/
 
 
 }

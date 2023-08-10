@@ -89,7 +89,11 @@ public class Calculadora {
                 }
                 case 7:{
                     System.out.println("Ingrese el angulo en grados ");
-                    
+                    grados=s.nextDouble();
+                    radianes=Math.toRadians(grados);
+                    radianes=coseno
+
+
 
 
 

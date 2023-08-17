@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Calculadora {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         Scanner s = new Scanner(System.in);
         int opcion;
@@ -38,6 +38,7 @@ public class Calculadora {
                     num2 = s.nextInt();
                     resultado = suma.operacion(num1, num2);
                     System.out.println("el resultado es: " + resultado);
+                    Thread.sleep(5000);
                     break;
 
 
@@ -49,6 +50,7 @@ public class Calculadora {
                     num2 = s.nextInt();
                     resultado = resta.operacion(num1, num2);
                     System.out.println("El resultado es: " + resultado);
+                    Thread.sleep(5000);
                     break;
 
 
@@ -60,6 +62,7 @@ public class Calculadora {
                     num2 = s.nextInt();
                     resultado = multi.operacion(num1, num2);
                     System.out.println("El resultado es: " + resultado);
+                    Thread.sleep(5000);
                     break;
 
                 }
@@ -69,8 +72,17 @@ public class Calculadora {
                     num3 = s.nextInt();
                     System.out.println("Ingrese el divisor ");
                     num4 = s.nextInt();
+                    while (num4 == 0) {
+
+                        System.out.println("Division por cero no admitida");
+                        System.out.println("Ingrese un nuevo divisor ");
+                        num4 = s.nextInt();
+
+
+                    }
                     resultado2 = Divi.operacion(num3, num4);
                     System.out.println("El resultado de dividir " + num3 + " entre " + num4 + " es: " + resultado2);
+                    Thread.sleep(5000);
                     break;
 
 
@@ -87,6 +99,7 @@ public class Calculadora {
                     //grados2 = //Math.toDegrees(resultado3);
                     System.out.println(resultado3);
                     System.out.println("El seno de " + grados + " es: " + resultado3);
+                    Thread.sleep(5000);
                     break;
 
 
@@ -97,6 +110,7 @@ public class Calculadora {
                     radianes = Math.toRadians(grados);
                     resultado3 = coseno.operacion(radianes);
                     System.out.println("El coseno de " + grados + " es: " + resultado3);
+                    Thread.sleep(5000);
                     break;
 
 
@@ -109,6 +123,7 @@ public class Calculadora {
                     radianes = Math.toRadians(grados);
                     resultado3 = tangente.operacion(radianes);
                     System.out.println("La tangebte de " + grados + " es: " + resultado3);
+                    Thread.sleep(5000);
                     break;
 
                 }
@@ -120,6 +135,7 @@ public class Calculadora {
                     num6 = s.nextDouble();
                     resultado3 = raiz.operacion(num5, num6);
                     System.out.println("La raiz " + num6 + " de " + num5 + " es: " + resultado3);
+                    Thread.sleep(5000);
                     break;
 
 
@@ -133,6 +149,7 @@ public class Calculadora {
 
                     resultado3 = potencia.operacion(num5, num6);
                     System.out.println("El resultado es: " + resultado3);
+                    Thread.sleep(5000);
                     break;
 
 
@@ -148,6 +165,7 @@ public class Calculadora {
                     resultado3=iva.operacion(num5,num6);
 
                     System.out.println("El iva es: "  + resultado3);
+                    Thread.sleep(5000);
                     break;
 
 

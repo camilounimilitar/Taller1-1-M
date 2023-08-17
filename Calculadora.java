@@ -21,11 +21,11 @@ public class Calculadora {
         do {
 
 
-            System.out.println("Elija una opcion \n1.Suma \n2.resta \n3.multiplicacion \n4.Division \n5.salir \n6.Seno en grados");
+            System.out.println("Elija una opcion \n1.Suma \n2.resta \n3.multiplicacion \n4.Division \n5.salir \n6.Seno en grados \n7.Coseno en grados \n8.Tangente ");
             opcion = s.nextInt();
-            while (opcion < 0 || opcion > 7) {
+            while (opcion < 0 || opcion > 9) {
                 System.out.println("Opcion invalida elija una de las siguientes: ");
-                System.out.println("Elija una opcion \n1.Suma \n2.resta \n3.multiplicacion \n4.Division \n5.salir \n6.Seno en grados  \n7.Coseno En Grados");
+                System.out.println("Elija una opcion \n1.Suma \n2.resta \n3.multiplicacion \n4.Division \n5.salir \n6.Seno en grados  \n7.Coseno En Grados \n8.Tangente");
                 opcion = s.nextInt();
             }
 
@@ -99,6 +99,21 @@ public class Calculadora {
 
                 }
 
+                case 8:{
+
+                    System.out.println("Ingrese el angulo en grados");
+                    grados=s.nextDouble();
+                    radianes=Math.toRadians(grados);
+                    resultado3=tangente.operacion(radianes);
+                    System.out.println("La tangebte de " + grados + " es: " + resultado3);
+                    break;
+
+                }
+
+                case 9 :{
+
+
+                }
 
             }
 
@@ -176,7 +191,7 @@ public class Calculadora {
         }
     }
 
-    private static class tan{
+    private static class tangente{
 
         private static double resultado6;
 
@@ -187,6 +202,17 @@ public class Calculadora {
 
     }
 
+
+
+    }
+
+    private  static  class raiz{
+        private  static double resultado7;
+
+        private static double operacion(double valor1){
+
+            
+        }
 
 
     }

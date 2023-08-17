@@ -22,11 +22,11 @@ public class Calculadora {
         do {
 
 
-            System.out.println("Elija una opcion \n1.Suma \n2.resta \n3.multiplicacion \n4.Division \n5.salir \n6.Seno en grados \n7.Coseno en grados \n8.Tangente \n9.Raiz enesima ");
+            System.out.println("Elija una opcion \n1.Suma \n2.resta \n3.multiplicacion \n4.Division \n5.salir \n6.Seno en grados \n7.Coseno en grados \n8.Tangente \n9.Raiz enesima \n10.Potencia enesima ");
             opcion = s.nextInt();
-            while (opcion < 0 || opcion > 9) {
+            while (opcion < 0 || opcion > 11) {
                 System.out.println("Opcion invalida elija una de las siguientes: ");
-                System.out.println("Elija una opcion \n1.Suma \n2.resta \n3.multiplicacion \n4.Division \n5.salir \n6.Seno en grados  \n7.Coseno En Grados \n8.Tangente \n9.Raiz enesima ");
+                System.out.println("Elija una opcion \n1.Suma \n2.resta \n3.multiplicacion \n4.Division \n5.salir \n6.Seno en grados  \n7.Coseno En Grados \n8.Tangente \n9.Raiz enesima \n10.Potencia enesima ");
                 opcion = s.nextInt();
             }
 
@@ -60,6 +60,7 @@ public class Calculadora {
                     num2 = s.nextInt();
                     resultado = multi.operacion(num1, num2);
                     System.out.println("El resultado es: " + resultado);
+                    break;
 
                 }
                 case 4: {
@@ -70,6 +71,7 @@ public class Calculadora {
                     num4 = s.nextInt();
                     resultado2 = Divi.operacion(num3, num4);
                     System.out.println("El resultado de dividir " + num3 + " entre " + num4 + " es: " + resultado2);
+                    break;
 
 
                 }
@@ -100,35 +102,56 @@ public class Calculadora {
 
                 }
 
-                case 8:{
+                case 8: {
 
                     System.out.println("Ingrese el angulo en grados");
-                    grados=s.nextDouble();
-                    radianes=Math.toRadians(grados);
-                    resultado3=tangente.operacion(radianes);
+                    grados = s.nextDouble();
+                    radianes = Math.toRadians(grados);
+                    resultado3 = tangente.operacion(radianes);
                     System.out.println("La tangebte de " + grados + " es: " + resultado3);
                     break;
 
                 }
 
-                case 9 :{
+                case 9: {
                     System.out.println("Ingrese el valor del radicando: ");
-                    num5=s.nextDouble();
+                    num5 = s.nextDouble();
                     System.out.println("Ingrese el valor del indice de la raiz ");
-                    num6=s.nextDouble();
-                    resultado3=raiz.operacion(num5,num6);
-                    System.out.println("La raiz " + num6 + " de " + num5 +" es: " + resultado3);
+                    num6 = s.nextDouble();
+                    resultado3 = raiz.operacion(num5, num6);
+                    System.out.println("La raiz " + num6 + " de " + num5 + " es: " + resultado3);
+                    break;
+
+
+                }
+
+                case 10: {
+                    System.out.println("Ingrese la base");
+                    num5 = s.nextDouble();
+                    System.out.println("Ingrese el exponente ");
+                    num6 = s.nextDouble();
+
+                    resultado3 = potencia.operacion(num5, num6);
+                    System.out.println("El resultado es: " + resultado3);
+                    break;
+
+
+                }
+
+                case 11:{
+                    System.out.println("Ingrese una cantidad para calcular el iva ");
+                    num5=s.nextDouble();
+
+                    System.out.println("Ingrese el valor del iva ");
+                    num1=s.nextInt();
+
 
 
 
 
                 }
 
-                case 10:{
-                    
 
-
-                }
 
             }
 
@@ -206,29 +229,28 @@ public class Calculadora {
         }
     }
 
-    private static class tangente{
+    private static class tangente {
 
         private static double resultado6;
 
         private static double operacion(double valor1) {
-            resultado6=Math.tan(valor1);
+            resultado6 = Math.tan(valor1);
             return resultado6;
 
 
+        }
+
+
     }
 
+    private static class raiz {
+        private static double resultado7;
 
+        private static double operacion(double valor1, double valor2) {
 
-    }
+            resultado7 = Math.pow(valor1, 1 / valor2);
 
-    private  static  class raiz{
-        private  static double resultado7;
-
-        private static double operacion(double valor1,double valor2){
-
-        resultado7=Math.pow(valor1,1/valor2);
-
-        return resultado7;
+            return resultado7;
 
         }
 
@@ -236,18 +258,25 @@ public class Calculadora {
     }
 
 
-    private  static class  potencia{
-        private static  double resultado8;
+    private static class potencia {
+        private static double resultado8;
 
-        private static double operacion(int valor1, int valor2){
-
-
+        private static double operacion(double valor1, double valor2) {
+            resultado8 = Math.pow(valor1, valor2);
+            return resultado8;
 
         }
 
 
     }
 
+    private static class iva{
+
+        
+
+
+
+    }
 
 
 

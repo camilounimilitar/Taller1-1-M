@@ -18,8 +18,6 @@ public class Calculadora {
         double resultado3;
 
 
-
-
         do {
 
 
@@ -90,16 +88,13 @@ public class Calculadora {
 
 
                 }
-                case 7:{
+                case 7: {
                     System.out.println("Ingrese el angulo en grados ");
-                    grados=s.nextDouble();
-                    radianes=Math.toRadians(grados);
-                    resultado3=coseno.operacion(radianes);
+                    grados = s.nextDouble();
+                    radianes = Math.toRadians(grados);
+                    resultado3 = coseno.operacion(radianes);
                     System.out.println("El coseno de " + grados + " es: " + resultado3);
                     break;
-
-
-
 
 
                 }
@@ -173,18 +168,28 @@ public class Calculadora {
 
 
     static class coseno {
-private static double resultado5;
-        private static double operacion(double valor1){
-            resultado5=Math.cos(valor1);
+        private static double resultado5;
+
+        private static double operacion(double valor1) {
+            resultado5 = Math.cos(valor1);
             return resultado5;
         }
     }
 
-   /* private  static double tan{
+    private static class tan{
 
-;
+        private static double resultado6;
 
-    }*/
+        private static double operacion(double valor1) {
+            resultado6=Math.tan(valor1);
+            return resultado6;
+
+
+    }
+
+
+
+    }
 
 
 }

@@ -13,7 +13,8 @@ public class Calculadora {
         float num3;
         float num4;
         double grados;
-        double grados2;
+        double num5;
+        double num6;
         double radianes;
         double resultado3;
 
@@ -21,11 +22,11 @@ public class Calculadora {
         do {
 
 
-            System.out.println("Elija una opcion \n1.Suma \n2.resta \n3.multiplicacion \n4.Division \n5.salir \n6.Seno en grados \n7.Coseno en grados \n8.Tangente ");
+            System.out.println("Elija una opcion \n1.Suma \n2.resta \n3.multiplicacion \n4.Division \n5.salir \n6.Seno en grados \n7.Coseno en grados \n8.Tangente \n9.Raiz enesima ");
             opcion = s.nextInt();
             while (opcion < 0 || opcion > 9) {
                 System.out.println("Opcion invalida elija una de las siguientes: ");
-                System.out.println("Elija una opcion \n1.Suma \n2.resta \n3.multiplicacion \n4.Division \n5.salir \n6.Seno en grados  \n7.Coseno En Grados \n8.Tangente");
+                System.out.println("Elija una opcion \n1.Suma \n2.resta \n3.multiplicacion \n4.Division \n5.salir \n6.Seno en grados  \n7.Coseno En Grados \n8.Tangente \n9.Raiz enesima ");
                 opcion = s.nextInt();
             }
 
@@ -111,6 +112,20 @@ public class Calculadora {
                 }
 
                 case 9 :{
+                    System.out.println("Ingrese el valor del radicando: ");
+                    num5=s.nextDouble();
+                    System.out.println("Ingrese el valor del indice de la raiz ");
+                    num6=s.nextDouble();
+                    resultado3=raiz.operacion(num5,num6);
+                    System.out.println("La raiz " + num6 + " de " + num5 +" es: " + resultado3);
+
+
+
+
+                }
+
+                case 10:{
+                    
 
 
                 }
@@ -209,13 +224,32 @@ public class Calculadora {
     private  static  class raiz{
         private  static double resultado7;
 
-        private static double operacion(double valor1){
+        private static double operacion(double valor1,double valor2){
 
-            
+        resultado7=Math.pow(valor1,1/valor2);
+
+        return resultado7;
+
         }
 
 
     }
+
+
+    private  static class  potencia{
+        private static  double resultado8;
+
+        private static double operacion(int valor1, int valor2){
+
+
+
+        }
+
+
+    }
+
+
+
 
 
 }

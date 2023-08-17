@@ -121,8 +121,18 @@ public class Calculadora {
                     System.out.println("Ingrese el angulo en grados");
                     grados = s.nextDouble();
                     radianes = Math.toRadians(grados);
-                    resultado3 = tangente.operacion(radianes);
-                    System.out.println("La tangebte de " + grados + " es: " + resultado3);
+
+
+
+                    /*while (Math.cos(Math.toRadians(90))==Math.cos(radianes)){
+                        System.out.println("Ingrese el angulo en grados");
+                        grados = s.nextDouble();
+                        radianes = Math.toRadians(grados);
+
+                    }*/
+                    resultado3=tangente.operacion(radianes);
+
+
                     Thread.sleep(5000);
                     break;
 
@@ -131,6 +141,13 @@ public class Calculadora {
                 case 9: {
                     System.out.println("Ingrese el valor del radicando: ");
                     num5 = s.nextDouble();
+                    while (num5 < 0) {
+                        System.out.println("No se puede calcular el valor de un radicando negativo ");
+                        System.out.println("Ingrese un nuevo valor del radicando: ");
+                        num5 = s.nextDouble();
+
+
+                    }
                     System.out.println("Ingrese el valor del indice de la raiz ");
                     num6 = s.nextDouble();
                     resultado3 = raiz.operacion(num5, num6);
@@ -155,25 +172,21 @@ public class Calculadora {
 
                 }
 
-                case 11:{
+                case 11: {
                     System.out.println("Ingrese una cantidad para calcular el iva ");
-                    num5=s.nextDouble();
+                    num5 = s.nextDouble();
 
                     System.out.println("Ingrese el valor del iva ");
-                    num6=s.nextDouble();
+                    num6 = s.nextDouble();
 
-                    resultado3=iva.operacion(num5,num6);
+                    resultado3 = iva.operacion(num5, num6);
 
-                    System.out.println("El iva es: "  + resultado3);
+                    System.out.println("El iva es: " + resultado3);
                     Thread.sleep(5000);
                     break;
 
 
-
-
-
                 }
-
 
 
             }
@@ -293,22 +306,19 @@ public class Calculadora {
 
     }
 
-    private static class iva{
+    private static class iva {
 
         public static double resultado9;
 
-        public static double operacion (double valor1, double valor2){
+        public static double operacion(double valor1, double valor2) {
 
-            resultado9=valor1*(valor2/100);
+            resultado9 = valor1 * (valor2 / 100);
             return resultado9;
 
         }
 
 
-
     }
-
-
 
 
 }

@@ -22,11 +22,11 @@ public class Calculadora {
         do {
 
 
-            System.out.println("Elija una opcion \n1.Suma \n2.resta \n3.multiplicacion \n4.Division \n5.salir \n6.Seno en grados \n7.Coseno en grados \n8.Tangente \n9.Raiz enesima \n10.Potencia enesima ");
+            System.out.println("\nElija una opcion \n1.Suma \n2.resta \n3.multiplicacion \n4.Division \n5.salir \n6.Seno en grados \n7.Coseno en grados \n8.Tangente \n9.Raiz enesima \n10.Potencia enesima \n11.Iva ");
             opcion = s.nextInt();
             while (opcion < 0 || opcion > 11) {
                 System.out.println("Opcion invalida elija una de las siguientes: ");
-                System.out.println("Elija una opcion \n1.Suma \n2.resta \n3.multiplicacion \n4.Division \n5.salir \n6.Seno en grados  \n7.Coseno En Grados \n8.Tangente \n9.Raiz enesima \n10.Potencia enesima ");
+                System.out.println("\nElija una opcion \n1.Suma \n2.resta \n3.multiplicacion \n4.Division \n5.salir \n6.Seno en grados  \n7.Coseno En Grados \n8.Tangente \n9.Raiz enesima \n10.Potencia enesima \n11.Iva");
                 opcion = s.nextInt();
             }
 
@@ -143,7 +143,12 @@ public class Calculadora {
                     num5=s.nextDouble();
 
                     System.out.println("Ingrese el valor del iva ");
-                    num1=s.nextInt();
+                    num6=s.nextDouble();
+
+                    resultado3=iva.operacion(num5,num6);
+
+                    System.out.println("El iva es: "  + resultado3);
+                    break;
 
 
 
@@ -272,7 +277,14 @@ public class Calculadora {
 
     private static class iva{
 
-        
+        public static double resultado9;
+
+        public static double operacion (double valor1, double valor2){
+
+            resultado9=valor1*(valor2/100);
+            return resultado9;
+
+        }
 
 
 

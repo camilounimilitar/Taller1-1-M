@@ -70,8 +70,18 @@ public class Interfaz extends javax.swing.JFrame {
         });
 
         boton_0.setText("0");
+        boton_0.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton_0ActionPerformed(evt);
+            }
+        });
 
         boton_1.setText("1");
+        boton_1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton_1ActionPerformed(evt);
+            }
+        });
 
         boton_2.setText("2");
         boton_2.addActionListener(new java.awt.event.ActionListener() {
@@ -81,8 +91,18 @@ public class Interfaz extends javax.swing.JFrame {
         });
 
         boton_3.setText("3");
+        boton_3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton_3ActionPerformed(evt);
+            }
+        });
 
         boton_4.setText("4");
+        boton_4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton_4ActionPerformed(evt);
+            }
+        });
 
         boton_5.setText("5");
         boton_5.addActionListener(new java.awt.event.ActionListener() {
@@ -92,12 +112,32 @@ public class Interfaz extends javax.swing.JFrame {
         });
 
         boton_6.setText("6");
+        boton_6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton_6ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText(",");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         boton_7.setText("7");
+        boton_7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton_7ActionPerformed(evt);
+            }
+        });
 
         boton_8.setText("8");
+        boton_8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton_8ActionPerformed(evt);
+            }
+        });
 
         boton_9.setText("9");
         boton_9.addActionListener(new java.awt.event.ActionListener() {
@@ -209,7 +249,9 @@ public class Interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_boton_igualActionPerformed
 
     private void boton_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_2ActionPerformed
-        // TODO add your handling code here:
+       pantalla.setText(pantalla.getText()+"2");
+        
+
     }//GEN-LAST:event_boton_2ActionPerformed
 
     private void boton_menosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_menosActionPerformed
@@ -217,26 +259,63 @@ public class Interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_boton_menosActionPerformed
 
     private void boton_5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_5ActionPerformed
-        // TODO add your handling code here:
+    pantalla.setText(pantalla.getText()+"5");
     }//GEN-LAST:event_boton_5ActionPerformed
 
     private void boton_9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_9ActionPerformed
-        // TODO add your handling code here:
+      
+     pantalla.setText(pantalla.getText()+"9");
     }//GEN-LAST:event_boton_9ActionPerformed
 
     private void boton_masActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_masActionPerformed
        
         String texto= pantalla.getText();
-        int numero1=Integer.parseInt(texto);
+        int num=Integer.parseInt(texto);
         pantalla.setText("");
         texto=pantalla.getText();
-        int numero2=Integer.parseInt(texto);
+        
         
       
         
         
         
     }//GEN-LAST:event_boton_masActionPerformed
+
+    private void boton_0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_0ActionPerformed
+
+        pantalla.setText(pantalla.getText()+"0");
+      
+    }//GEN-LAST:event_boton_0ActionPerformed
+
+    private void boton_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_1ActionPerformed
+      
+      pantalla .setText(pantalla.getText()+"1");
+      
+    }//GEN-LAST:event_boton_1ActionPerformed
+
+    private void boton_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_3ActionPerformed
+    pantalla.setText(pantalla.getText()+"3");
+    }//GEN-LAST:event_boton_3ActionPerformed
+
+    private void boton_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_4ActionPerformed
+    pantalla.setText(pantalla.getText()+"4");
+    }//GEN-LAST:event_boton_4ActionPerformed
+
+    private void boton_6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_6ActionPerformed
+    pantalla.setText(pantalla.getText()+"6");
+    }//GEN-LAST:event_boton_6ActionPerformed
+
+    private void boton_7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_7ActionPerformed
+    pantalla.setText(pantalla.getText()+"7");
+    }//GEN-LAST:event_boton_7ActionPerformed
+
+    private void boton_8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_8ActionPerformed
+    pantalla.setText(pantalla.getText()+"8");
+    }//GEN-LAST:event_boton_8ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+   pantalla.setText(pantalla.getText()+",");
+    }//GEN-LAST:event_jButton3ActionPerformed
 
 
 

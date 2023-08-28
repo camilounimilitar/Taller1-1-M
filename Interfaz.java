@@ -5,6 +5,8 @@
 package IGU;
 
 import com.mycompany.calculadora3.Calculadora3;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 /**
@@ -48,8 +50,9 @@ public class Interfaz extends javax.swing.JFrame {
         boton_multiplicacion = new javax.swing.JButton();
         boton_division = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        boton_seno = new javax.swing.JButton();
+        boton_raiz_cuadrada = new javax.swing.JButton();
+        boton_coseno = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -180,10 +183,27 @@ public class Interfaz extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("Sin");
+        boton_seno.setText("Sin()");
+        boton_seno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton_senoActionPerformed(evt);
+            }
+        });
 
-        jButton4.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jButton4.setText("√");
+        boton_raiz_cuadrada.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        boton_raiz_cuadrada.setText("√");
+        boton_raiz_cuadrada.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton_raiz_cuadradaActionPerformed(evt);
+            }
+        });
+
+        boton_coseno.setText("Coseno()");
+        boton_coseno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton_cosenoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -194,36 +214,37 @@ public class Interfaz extends javax.swing.JFrame {
                 .addComponent(pantalla, javax.swing.GroupLayout.PREFERRED_SIZE, 407, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(35, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(24, 24, 24)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(boton_4, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(boton_5, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(boton_7, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(boton_8, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                    .addComponent(boton_1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(boton_2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(2, 2, 2)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                            .addComponent(boton_7, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGap(18, 18, 18)
-                                            .addComponent(boton_8, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                            .addComponent(boton_1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGap(18, 18, 18)
-                                            .addComponent(boton_2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(boton_0, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(boton_0, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(boton_3, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(boton_6, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(boton_9, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(boton_9, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addComponent(boton_seno, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(boton_coseno, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -236,7 +257,7 @@ public class Interfaz extends javax.swing.JFrame {
                         .addComponent(boton_division, javax.swing.GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE)
                         .addComponent(boton_menos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(boton_igual, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(boton_raiz_cuadrada, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(17, 17, 17))
         );
         jPanel1Layout.setVerticalGroup(
@@ -249,7 +270,7 @@ public class Interfaz extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
-                            .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(boton_raiz_cuadrada, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(boton_multiplicacion, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -263,7 +284,9 @@ public class Interfaz extends javax.swing.JFrame {
                             .addComponent(boton_mas, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(50, 50, 50))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(boton_seno, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
+                            .addComponent(boton_coseno, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(32, 32, 32)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(boton_8, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -306,31 +329,47 @@ public class Interfaz extends javax.swing.JFrame {
     double numero2;
     String signo;
     double resultado2;
+    double radianes; 
     
     private void boton_igualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_igualActionPerformed
      
         String total;
-        numero2=Double.parseDouble(pantalla.getText());
+        //numero2=Double.parseDouble(pantalla.getText());
         
         if(signo.equals("+")){
+            numero2=Double.parseDouble(pantalla.getText());
             resultado2=numero1+numero2;
             total= String.valueOf(resultado2);
             pantalla.setText(total);
         }
         if(signo.equals("-")){
+            numero2=Double.parseDouble(pantalla.getText());
             resultado2=numero1-numero2;
             total=String.valueOf(resultado2);
             pantalla.setText(total);
             
         }
         if(signo.equals("*")){
-            
+            numero2=Double.parseDouble(pantalla.getText());
             resultado2=numero1*numero2;
             total=String.valueOf(resultado2);
             pantalla.setText(total);
             
             
         }
+        if(numero2 != 0 && signo.equals("/")){
+           /*while(numero2==0){
+               pantalla.setText("Division invalida, ingrese un nuevo valor");
+               pantalla.setText("");
+               numero2=Double.parseDouble(pantalla.getText());
+           }*/
+            numero2=Double.parseDouble(pantalla.getText());
+            resultado2=numero1/numero2;
+            total=String.valueOf(resultado2);
+            pantalla.setText(total);
+            
+        }
+       
         
         
         
@@ -454,6 +493,42 @@ public class Interfaz extends javax.swing.JFrame {
      pantalla.setText("");
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void boton_raiz_cuadradaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_raiz_cuadradaActionPerformed
+       String total2;
+        if(!pantalla.getText().equals("")){
+         numero1= Double.parseDouble(pantalla.getText());
+         signo="#";
+         pantalla.setText("");
+         resultado2=Math.pow(numero1,(1/2d));
+         total2=String.valueOf(resultado2);
+         pantalla.setText(total2);
+            
+        }
+    }//GEN-LAST:event_boton_raiz_cuadradaActionPerformed
+
+    private void boton_senoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_senoActionPerformed
+        String total3;
+        if(!pantalla.getText().equals("")){
+           numero1= Double.parseDouble(pantalla.getText());
+           radianes=Math.toRadians(numero1);
+           resultado2=Math.sin(radianes);
+           total3=String.valueOf(resultado2);
+           pantalla.setText(total3);
+                   
+        }
+        
+        
+    }//GEN-LAST:event_boton_senoActionPerformed
+
+    private void boton_cosenoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_cosenoActionPerformed
+  
+        String total3;
+        if(){
+        
+        
+        
+    }//GEN-LAST:event_boton_cosenoActionPerformed
+
    /* public static String operar(String num1, String signo,String num2){
     
      double resultado1;
@@ -476,15 +551,16 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JButton boton_7;
     private javax.swing.JButton boton_8;
     private javax.swing.JButton boton_9;
+    private javax.swing.JButton boton_coseno;
     private javax.swing.JButton boton_division;
     private javax.swing.JButton boton_igual;
     private javax.swing.JButton boton_mas;
     private javax.swing.JButton boton_menos;
     private javax.swing.JButton boton_multiplicacion;
+    private javax.swing.JButton boton_raiz_cuadrada;
+    private javax.swing.JButton boton_seno;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField pantalla;
     // End of variables declaration//GEN-END:variables

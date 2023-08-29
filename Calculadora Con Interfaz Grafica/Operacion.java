@@ -44,6 +44,9 @@ public class Operacion {
    public static double raiz(double a, double b){
        return Math.pow(a,(1/b));
    }
+   public static double iva(double a, double b){
+       return a+(a*(b/100));   
+   }
    
    
    

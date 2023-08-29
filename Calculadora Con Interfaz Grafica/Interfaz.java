@@ -368,7 +368,6 @@ public class Interfaz extends javax.swing.JFrame {
     double numero2;
     String signo;
     double resultado2;
-    double radianes; 
     
     private void boton_igualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_igualActionPerformed
      
@@ -417,7 +416,13 @@ public class Interfaz extends javax.swing.JFrame {
             total=String.valueOf(resultado2);
             pantalla.setText(total);
         }
-        
+        if(signo.equals("¿")){
+        numero2=Double.parseDouble(pantalla.getText());
+        resultado2=Operacion.iva(numero1, numero2);
+        total=String.valueOf(resultado2);
+        pantalla.setText(total);
+            
+        }
        
         
         
